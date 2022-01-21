@@ -17,7 +17,7 @@ interface Props {
 export default function Quiz({ quizData }: Props) {
     const { query } = useRouter();
     const id = query.id as string;
-    const { title, prose, images, choices, answerIndex, hint } = quizData;
+    const { title, prose, images, choices, answerIndex, hint, explanation } = quizData;
     const choicesRefs = useRef<HTMLButtonElement[]>([])
     const [playerChoice, setPlayerChoice] = useState("")
     const [hasWon, setHasWon] = useState(false);
@@ -64,6 +64,8 @@ export default function Quiz({ quizData }: Props) {
                                 </figure>)
                         })}
                     </div>
+                    <hr/>
+                    <p>The answer choices does not exactly correspond 1-1 to above pictures. Sorry for the visual confusion</p>
                     <div className={`${styles.table22} ${styles.choices}`}>
                         {choices.map((choice, i) => {
                             return <button type="button" key={i} onClick={() => chooseChoice(i)} ref={el => { choicesRefs.current[i] = el! }}>{choice}</button>
@@ -71,7 +73,8 @@ export default function Quiz({ quizData }: Props) {
                     </div>
                 </div>
                 {shouldShowHint && <p>{hint ? hint : "No more hints to give"}</p>}
-                <button type="submit" className={styles.submitButton}>SUBMIT</button>
+                {hasWon && <p>{`Explanation: ${explanation}`}</p>}                
+                {!hasWon && <button type="submit" className={styles.submitButton}>SUBMIT</button>}
             </form>
             {hasWon && parseInt(id) <= 4 && <Link href={`/quizzes/${parseInt(id) + 1}`}><button>NEXT</button></Link>}
             <div>
