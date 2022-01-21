@@ -14,7 +14,7 @@ export const data: QuizQuestionData[] = [{
     images: [
         {
             text: "Dragonball-Z fusion",
-            url: "https://www.wikihow.com/images/a/a2/Fusion-Dance-in-Dragonball-Z-(Video-Game)-Final.jpg"
+            url: "https://i.ytimg.com/vi/_cuvckR5vRk/maxresdefault.jpg"
         }, {
             text: "Logarithm",
             url: "https://media.istockphoto.com/photos/calculators-log-or-logarithm-key-in-closeup-picture-id857325276?s=612x612"
