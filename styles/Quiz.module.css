@@ -1,0 +1,33 @@
+.container {
+    width: auto;
+}
+
+.form {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.table22 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.table22 > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choices {
+    column-gap: 5em;
+    row-gap: 1em;
+}
+
+.submitButton {
+    margin: 50px auto;
+}
+
+.figure {
+    display: block;
+}
